@@ -93,15 +93,9 @@ Unity 3D로 제작한 자동차 운전 시뮬레이션 게임
 
 
 
-CarSimulator/
-│
-│── Scripts/
-│       ├── ManMove.cs              # 플레이어 3인칭 이동 및 애니메이션
-│       ├── VehicleControl.cs       # 차량 조종 및 물리 시뮬레이션
-│       ├── VehicleInteraction.cs   # 탑승/하차 시스템 및 카메라 전환
-│       └── CameraFollow.cs         # 3인칭 카메라 부드러운 추적
-│
-└── README.md                       
+
+<img width="922" height="360" alt="image" src="https://github.com/user-attachments/assets/bef640e4-3601-43f9-80c2-f3f1e121062c" />
+
 
 
 
