@@ -1,10 +1,8 @@
-# 자동차 시뮬레이션 게임
+# 自動車シミュレーションゲーム
 
-Unity 3D로 제작한 자동차 운전 시뮬레이션 게임
+Unity 3Dで制作した自動車運転シミュレーションゲーム
 
-플레이어는 맵을 자유롭게 걸어다니다가 자동차에 탑승하여 1인칭 시점으로 운전할 수 있다.
-
-
+プレイヤーはマップを自由に歩き回り、自動車に乗車して一人称視点で運転することができます。
 
 
 
@@ -12,22 +10,18 @@ Unity 3D로 제작한 자동차 운전 시뮬레이션 게임
 
 
 
-<img src="file:///C:/Users/yonac/Desktop/CarSimularator.gif" title="" alt="CarSimularator" style="zoom:50%;">
 
 
 
 
+## 目次
 
-
-
-## 목차
-
-* [프로젝트 소개 ](#프로젝트-소개)
-* [주요 기능](#주요 기능)
-* [프로젝트 구조](#프로젝트 구조)
-* [조작 방법](#조작 방법)
-* [스크립트 설명](#스크립트 설명)
-* [문제 해결](#문제 해결)
+* [プロジェクト紹介](#プロジェクト紹介)
+* [主な機能](#主な機能)
+* [プロジェクト構造](#プロジェクト構造)
+* [操作方法](#操作方法)
+* [スクリプト説明](#スクリプト説明)
+* [トラブルシューティング](#トラブルシューティング)
   
   
   
@@ -35,205 +29,195 @@ Unity 3D로 제작한 자동차 운전 시뮬레이션 게임
   
   
 
-## 프로젝트 소개
+## プロジェクト紹介
 
 
 
-* **인칭 캐릭터 이동**: 플레이어가 농장 맵을 자유롭게 탐험
-* **차량 탑승 시스템**: 자동차 근처에서 상호작용하여 탑승
-* **시점 자동 전환**: 탑승 시 3인칭 → 1인칭, 하차 시 1인칭 → 3인칭
-* **물리 기반 주행**: Rigidbody를 활용한 리얼한 차량 주행 시뮬레이션
+* **三人称キャラクター移動**: プレイヤーが農場マップを自由に探索
+* **車両乗車システム**: 自動車の近くでインタラクションして乗車
+* **視点自動切り替え**: 乗車時 三人称 → 一人称、下車時 一人称 → 三人称
+* **物理ベース走行**: Rigidbodyを活用したリアルな車両走行シミュレーション
   
   
-  
-  
-  
-  
-
-## 주요 기능
-
-
-
-1. 플레이어 시스템 (3인칭 시점)
-* WASD 키를 이용한 자유로운 이동
-* Shift 키를 누르면 달리기
-* Space 키로 점프
-* 애니메이션 블렌딩 지원 (걷기/달리기)
-* Character Controller 기반 물리 적용
-  
-  
-2. 차량 상호작용 시스템
-* 플레이어가 자동차 근처에 접근하면 탑승 가능
-* **E 키**를 눌러 자동차 탑승
-* 탑승 시 자동으로 3인칭 → 1인칭 시점 전환
-* **Space 키**를 눌러 자동차에서 하차
-* 하차 시 자동으로 1인칭 → 3인칭 시점 전환
-* 하차 위치는 차량 옆으로 자동 배치
-  
-  
-3. 차량 주행 시스템 (1인칭 시점)
-* W/S 키로 전진/후진
-* A/D 키로 좌우 회전
-* Shift 키로 가속 (점진적 속도 증가)
-* 물리 기반 차량 움직임 (Rigidbody)
-* 최대 속도 제한 기능
-* 충돌 감지 및 처리 (장애물과 충돌 시 정지)
-  
-  
-4. 카메라 시스템
-* 3인칭 카메라: 플레이어를 부드럽게 추적
-* 1인칭 카메라: 운전자 시점 제공
-* 시점 전환 시 자연스러운 카메라 전환
   
   
   
   
 
-## 프로젝트 구조
+## 主な機能
 
+
+
+1. プレイヤーシステム（三人称視点）
+* WASDキーによる自由な移動
+* Shiftキーを押すとダッシュ
+* Spaceキーでジャンプ
+* アニメーションブレンディング対応（歩行/走行）
+* Character Controllerベースの物理適用
+2. 車両インタラクションシステム
+* プレイヤーが自動車の近くに接近すると乗車可能
+* **Eキー**を押して自動車に乗車
+* 乗車時に自動的に三人称 → 一人称視点に切り替え
+* **Spaceキー**を押して自動車から下車
+* 下車時に自動的に一人称 → 三人称視点に切り替え
+* 下車位置は車両の横に自動配置
+3. 車両走行システム（一人称視点）
+* W/Sキーで前進/後退
+* A/Dキーで左右回転
+* Shiftキーで加速（段階的な速度増加）
+* 物理ベースの車両動作（Rigidbody）
+* 最高速度制限機能
+* 衝突検知と処理（障害物との衝突時に停止）
+4. カメラシステム
+* 三人称カメラ: プレイヤーをスムーズに追跡
+* 一人称カメラ: ドライバー視点を提供
+* 視点切り替え時の自然なカメラ遷移
+  
+  
+  
+  
+
+## プロジェクト構造
 
 
 
 <img width="922" height="360" alt="image" src="https://github.com/user-attachments/assets/bef640e4-3601-43f9-80c2-f3f1e121062c" />
 
+## 操作方法
+
+### プレイヤーモード（三人称視点）
+
+| キー    | 動作               |
+| ----- | ---------------- |
+| W     | 前進               |
+| S     | 後退               |
+| A     | 左移動              |
+| D     | 右移動              |
+| Shift | ダッシュ             |
+| Space | ジャンプ             |
+| E     | 車両乗車（車両の近くにいる時） |
 
 
 
-## 조작 방법
+### 車両モード（一人称視点）
 
-### 플레이어 모드 (3인칭 시점)
-
-| 키     | 동작              |
-| ----- | --------------- |
-| W     | 전진              |
-| S     | 후진              |
-| A     | 왼쪽 이동           |
-| D     | 오른쪽 이동          |
-| Shift | 달리기             |
-| Space | 점프              |
-| E     | 차량 탑승 (차량 근처에서) |
-
-
-
-### 차량 모드 (1인칭 시점)
-
-| 키     | 동작      |
+| キー    | 動作      |
 | ----- | ------- |
-| W     | 전진      |
-| S     | 후진      |
-| A     | 왼쪽 회전   |
-| D     | 오른쪽 회전  |
-| Shift | 가속      |
-| Space | 차량에서 하차 |
+| W     | 前進      |
+| S     | 後退      |
+| A     | 左回転     |
+| D     | 右回転     |
+| Shift | 加速      |
+| Space | 車両から下車  |
 
 
 
 
 
-## 스크립트 설명
+## スクリプト説明
 
 
 
-1. `ManMove.cs` - 플레이어 이동 제어
+1. `ManMove.cs` - プレイヤー移動制御
 
-**주요 기능:**
+**主な機能:**
 
-* Character Controller 기반 이동 시스템
-* WASD 키 입력 처리
-* 걷기/달리기 속도 전환
-* 점프 기능 (중력 적용)
-* 애니메이션 블렌딩 (BlendSpeed 파라미터)
+* Character Controllerベースの移動システム
+* WASDキー入力処理
+* 歩行/走行速度切り替え
+* ジャンプ機能（重力適用）
+* アニメーションブレンディング（BlendSpeedパラメータ）
   
   
 
-주요 변수:
+主な変数:
 
 ```
-public float moveSpeed = 3f;      // 기본 이동 속도
-public float runSpeed = 6f;       // 달리기 속도
-public float walkSpeed = 3f;      // 걷기 속도
-public float jumpForce = 5f;      // 점프 힘
-public float gravity = -9.81f;    // 중력 가속도
-```
-
-
-
-2. `VehicleControl.cs` - 차량 조종
-
-**주요 기능:**
-
-* Rigidbody 기반 물리 시뮬레이션
-* 전진/후진 및 회전 처리
-* 가속 시스템 (Shift 키)
-* 최대 속도 제한
-* 충돌 감지 및 처리
-* 트리거 콜라이더 자동 생성
-  
-  
-
-주요 변수:
-
-```
-public float speed = 10.0f;           // 기본 속도
-public float acceleration = 2.0f;      // 가속도
-public float maxSpeed = 50.0f;         // 최대 속도
-public float turnSpeed = 100.0f;       // 회전 속도
+public float moveSpeed = 3f;      // 基本移動速度
+public float runSpeed = 6f;       // 走行速度
+public float walkSpeed = 3f;      // 歩行速度
+public float jumpForce = 5f;      // ジャンプ力
+public float gravity = -9.81f;    // 重力加速度
 ```
 
 
 
-**핵심 메서드:**
+2. `VehicleControl.cs` - 車両操縦
 
-* `SetVehicleActive(bool)`: 차량 활성화/비활성화
-* `AddTriggerCollider()`: 탑승용 트리거 콜라이더 생성
-3. `VehicleInteraction.cs` - 탑승/하차 시스템
+**主な機能:**
+
+* Rigidbodyベースの物理シミュレーション
+* 前進/後退および回転処理
+* 加速システム（Shiftキー）
+* 最高速度制限
+* 衝突検知と処理
+* トリガーコライダー自動生成
+  
+  
+
+主な変数:
+
+```
+public float speed = 10.0f;           // 基本速度
+public float acceleration = 2.0f;      // 加速度
+public float maxSpeed = 50.0f;         // 最高速度
+public float turnSpeed = 100.0f;       // 回転速度
+```
+
+
+
+**主要メソッド:**
+
+* `SetVehicleActive(bool)`: 車両アクティブ化/非アクティブ化
+* `AddTriggerCollider()`: 乗車用トリガーコライダー生成
+3. `VehicleInteraction.cs` - 乗車/下車システム
    
    
 
-**주요 기능:**
+**主な機能:**
 
-* 플레이어와 차량 간 거리 감지
-* E 키 탑승, Space 키 하차
-* 카메라 시점 전환 (3인칭 ↔ 1인칭)
-* 플레이어 이동 스크립트 활성화/비활성화
-* 차량 제어 활성화/비활성화
+* プレイヤーと車両間の距離検知
+* Eキー乗車、Spaceキー下車
+* カメラ視点切り替え（三人称 ↔ 一人称）
+* プレイヤー移動スクリプトのアクティブ化/非アクティブ化
+* 車両制御のアクティブ化/非アクティブ化
   
   
 
-주요 변수:
+主な変数:
 
 ```
-public GameObject player;              // 플레이어 오브젝트
-public Transform vehicleSeat;          // 좌석 위치
-public Camera firstPersonCamera;       // 1인칭 카메라
-public Camera thirdPersonCamera;       // 3인칭 카메라
-public float enterDistance = 2.0f;     // 탑승 가능 거리
+public GameObject player;              // プレイヤーオブジェクト
+public Transform vehicleSeat;          // 座席位置
+public Camera firstPersonCamera;       // 一人称カメラ
+public Camera thirdPersonCamera;       // 三人称カメラ
+public float enterDistance = 2.0f;     // 乗車可能距離
 ```
 
 
 
-**핵심 메서드:**
+**主要メソッド:**
 
-* `EnterVehicle()`: 탑승 처리
-* `ExitVehicle()`: 하차 처리
-4. `CameraFollow.cs` - 3인칭 카메라 추적
+* `EnterVehicle()`: 乗車処理
+* `ExitVehicle()`: 下車処理
+4. `CameraFollow.cs` - 三人称カメラ追跡
    
    
 
-**주요 기능:**
+**主な機能:**
 
-* 타겟(플레이어)을 부드럽게 추적
-* Lerp를 이용한 자연스러운 이동
-* LookAt으로 항상 타겟을 바라봄
+* ターゲット（プレイヤー）をスムーズに追跡
+* Lerpを使用した自然な移動
+* LookAtで常にターゲットを注視
   
   
 
-주요 변수:
+主な変数:
 
 ```
-public Transform target;              // 추적할 대상
-public Vector3 offset;                // 카메라 오프셋
-public float smoothSpeed = 0.125f;    // 부드러움 정도
+public Transform target;              // 追跡対象
+public Vector3 offset;                // カメラオフセット
+public float smoothSpeed = 0.125f;    // スムーズさの度合い
 ```
 
 
@@ -242,18 +226,18 @@ public float smoothSpeed = 0.125f;    // 부드러움 정도
 
 
 
-## 문제 해결
+## トラブルシューティング
 
 
 
 ### "There are 2 audio listeners in the scene"
 
-**원인:** Main Camera와 FirstPersonCamera에 Audio Listener가 둘 다 있음
+**原因:** Main CameraとFirstPersonCameraの両方にAudio Listenerがある
 
-**해결:**
+**解決方法:**
 
-1. FirstPersonCamera 선택
-2. Audio Listener 컴포넌트 제거 (Remove Component)
+1. FirstPersonCameraを選択
+2. Audio Listenerコンポーネントを削除（Remove Component）
    
    
 
@@ -261,16 +245,16 @@ public float smoothSpeed = 0.125f;    // 부드러움 정도
 
 
 
-### 차량이 지면을 뚫고 내려감
+### 車両が地面を突き抜けて落ちる
 
-**원인:** 충돌 감지 문제 또는 Rigidbody 설정 문제
+**原因:** 衝突検知の問題またはRigidbody設定の問題
 
-**해결:**
+**解決方法:**
 
-1. Terrain에 Terrain Collider가 있는지 확인
-2. 차량의 Rigidbody Mass를 10000으로 증가
-3. VehicleControl.cs에서 `rb.centerOfMass`가 낮게 설정되어 있는지 확인
-4. 차량의 Mesh Collider에서 Convex 옵션 활성화
+1. TerrainにTerrain Colliderがあるか確認
+2. 車両のRigidbody Massを10000に増加
+3. VehicleControl.csで`rb.centerOfMass`が低く設定されているか確認
+4. 車両のMesh ColliderでConvexオプションを有効化
    
    
 
@@ -278,17 +262,17 @@ public float smoothSpeed = 0.125f;    // 부드러움 정도
 
 
 
-### 차량 탑승이 안됨
+### 車両に乗車できない
 
-**원인:** 태그 설정 오류 또는 거리 문제
+**原因:** タグ設定エラーまたは距離の問題
 
-**해결:**
+**解決方法:**
 
-1. Player 오브젝트의 태그가 "Player"인지 확인
-2. Vehicle 오브젝트의 태그가 "Vehicle"인지 확인
-3. VehicleInteraction의 Enter Distance 값을 더 크게 조정 (예: 3.0)
-4. Scene 뷰에서 노란색 와이어 구체(Gizmo)를 확인하여 탑승 범위 시각화
-5. Console 창에서 에러 메시지 확인
+1. PlayerオブジェクトのタグがPlayerになっているか確認
+2. VehicleオブジェクトのタグがVehicleになっているか確認
+3. VehicleInteractionのEnter Distance値をより大きく調整（例: 3.0）
+4. Scene Viewで黄色いワイヤー球体（Gizmo）を確認して乗車範囲を可視化
+5. Consoleウィンドウでエラーメッセージを確認
    
    
 
@@ -296,15 +280,15 @@ public float smoothSpeed = 0.125f;    // 부드러움 정도
 
 
 
-### 카메라가 이상하게 움직임
+### カメラが変な動きをする
 
-**원인:** CameraFollow 설정 문제
+**原因:** CameraFollow設定の問題
 
-**해결:**
+**解決方法:**
 
-1. Smooth Speed 값 조정 (0.05 ~ 0.2 사이)
-2. Offset 값 재조정 (Y 값을 높이면 위에서 내려다보는 시점)
-3. 카메라가 플레이어의 자식이 아닌지 확인 (독립된 오브젝트여야 함)
+1. Smooth Speed値を調整（0.05～0.2の間）
+2. Offset値を再調整（Y値を高くすると上から見下ろす視点になる）
+3. カメラがプレイヤーの子オブジェクトになっていないか確認（独立したオブジェクトである必要がある）
    
    
 
@@ -312,15 +296,15 @@ public float smoothSpeed = 0.125f;    // 부드러움 정도
 
 
 
-### 애니메이션이 작동하지 않음
+### アニメーションが動作しない
 
-**원인:** Animator 설정 문제
+**原因:** Animator設定の問題
 
-**해결:**
+**解決方法:**
 
-1. 캐릭터 모델에 Animator 컴포넌트가 있는지 확인
-2. Animator Controller에 "BlendSpeed" Float 파라미터 추가
-3. BlendSpeed 값에 따라 Idle → Walk → Run 전환되도록 Blend Tree 설정
+1. キャラクターモデルにAnimatorコンポーネントがあるか確認
+2. Animator Controllerに「BlendSpeed」Floatパラメータを追加
+3. BlendSpeed値に応じて Idle → Walk → Run に遷移するようにBlend Treeを設定
    
    
 
@@ -328,18 +312,18 @@ public float smoothSpeed = 0.125f;    // 부드러움 정도
 
 
 
-### 차량이 쉽게 뒤집힘
+### 車両が簡単に横転する
 
-**원인:** 무게 중심이 너무 높음
+**原因:** 重心が高すぎる
 
-**해결:**
+**解決方法:**
 
-1. VehicleControl.cs의 Start() 메서드에서:
+1. VehicleControl.csのStart()メソッドで:
 
 ```
-rb.centerOfMass = new Vector3(0, -2.0f, 0); // Y 값을 더 낮게
+rb.centerOfMass = new Vector3(0, -2.0f, 0); // Y値をより低く
 ```
 
 
 
-2. Rigidbody의 Mass를 더 증가 (15000 ~ 20000)
+2. RigidbodyのMassをさらに増加（15000～20000）
